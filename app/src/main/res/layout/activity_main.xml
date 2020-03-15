@@ -5,14 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_app"
+
     tools:context=".MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
+        android:background="#92B8BED6"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp"
-        android:layout_marginBottom="20dp">
+        tools:layout_editor_absoluteX="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,7 +30,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Open URL (ACTION_VIEW)" />
+                android:text="Open URL (ACTION_VIEW)"
+                android:textColor="@color/fontcolor" />
 
             <TableRow
                 android:layout_width="match_parent"
@@ -39,7 +42,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:text="URL : " />
+                    android:text="URL : "
+                    android:textColor="@color/fontcolor" />
 
                 <EditText
                     android:id="@+id/texturl"
@@ -48,6 +52,7 @@
                     android:ems="10"
                     android:hint="https://"
                     android:inputType="textPersonName"
+                    android:textColor="@color/fontcolor"
                     android:textSize="15dp" />
 
                 <ImageButton
@@ -62,12 +67,13 @@
             </TableRow>
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textView15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:gravity="center"
-                android:hint="Text (ACTION_SEND)" />
+                android:text="Text (ACTION_SEND)"
+                android:textColor="@color/fontcolor" />
 
             <TableRow
                 android:layout_width="match_parent"
@@ -78,7 +84,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:text="Text : " />
+                    android:text="Text : "
+                    android:textColor="@color/fontcolor" />
 
                 <EditText
                     android:id="@+id/inputext"
@@ -87,6 +94,7 @@
                     android:ems="10"
                     android:hint="Text"
                     android:inputType="textPersonName"
+                    android:textColor="@color/fontcolor"
                     android:textSize="15dp" />
 
                 <ImageButton
@@ -103,9 +111,10 @@
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:gravity="center"
-                android:text="Dial Number (ACTION_DIAL)" />
+                android:text="Dial Number (ACTION_DIAL)"
+                android:textColor="@color/fontcolor" />
 
             <TableRow
                 android:layout_width="match_parent"
@@ -117,7 +126,8 @@
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:text="Phone Number : " />
+                    android:text="Phone Number : "
+                    android:textColor="@color/fontcolor" />
 
                 <EditText
                     android:id="@+id/phonenumber"
@@ -126,6 +136,7 @@
                     android:ems="10"
                     android:hint="Phone Number"
                     android:inputType="phone"
+                    android:textColor="@color/fontcolor"
                     android:textSize="15dp" />
 
                 <ImageButton
@@ -142,9 +153,10 @@
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:gravity="center"
-                android:text="Call Phone Number (ACTION_CALL)" />
+                android:text="Call Phone Number (ACTION_CALL)"
+                android:textColor="@color/fontcolor" />
 
             <TableRow
                 android:layout_width="match_parent"
@@ -156,7 +168,8 @@
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:text="Phone Number : " />
+                    android:text="Phone Number : "
+                    android:textColor="@color/fontcolor" />
 
                 <EditText
                     android:id="@+id/numbercall"
@@ -165,6 +178,7 @@
                     android:ems="10"
                     android:hint="Phone Number"
                     android:inputType="phone"
+                    android:textColor="@color/fontcolor"
                     android:textSize="15dp" />
 
                 <ImageButton
@@ -181,9 +195,10 @@
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:gravity="center"
-                android:text="Alarm (ACTION_SET_ALARM)" />
+                android:text="Alarm (ACTION_SET_ALARM)"
+                android:textColor="@color/fontcolor" />
 
             <TableRow
                 android:layout_width="match_parent"
@@ -195,7 +210,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:text="Time : " />
+                    android:text="Time : "
+                    android:textColor="@color/fontcolor" />
 
                 <EditText
                     android:id="@+id/texttime"
@@ -204,6 +220,7 @@
                     android:ems="10"
                     android:hint="Set Time"
                     android:inputType="textPersonName"
+                    android:textColor="@color/fontcolor"
                     android:textSize="15dp" />
 
                 <ImageButton
@@ -221,22 +238,24 @@
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:gravity="center"
-                android:text="Save Contact Info (ACTION_INSERT)" />
+                android:text="Save Contact Info (ACTION_INSERT)"
+                android:textColor="@color/fontcolor" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                android:gravity="center_vertical">
 
                 <TextView
                     android:id="@+id/textView14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:text="Contact : " />
+                    android:text="Contact : "
+                    android:textColor="@color/fontcolor" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -250,6 +269,7 @@
                         android:ems="10"
                         android:hint="Name"
                         android:inputType="textPersonName"
+                        android:textColor="@color/fontcolor"
                         android:textSize="15dp" />
 
 
@@ -260,6 +280,7 @@
                         android:ems="10"
                         android:hint="Phone"
                         android:inputType="phone"
+                        android:textColor="@color/fontcolor"
                         android:textSize="15dp" />
 
                     <EditText
@@ -269,6 +290,7 @@
                         android:ems="10"
                         android:hint="Email"
                         android:inputType="textEmailAddress"
+                        android:textColor="@color/fontcolor"
                         android:textSize="15dp" />
                 </LinearLayout>
 

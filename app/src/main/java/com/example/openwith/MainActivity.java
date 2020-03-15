@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     public void OpenUrl(View view) {
         Turl = findViewById(R.id.texturl);
         url = Turl.getText().toString();
-        Uri link = Uri.parse(url);
+        Uri link = Uri.parse("https://"+url);
         Intent openweb = new Intent(Intent.ACTION_VIEW, link);
 
         if (openweb.resolveActivity(getPackageManager()) != null){
