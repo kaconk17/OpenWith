@@ -4,26 +4,52 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.AlarmClock;
+import android.provider.ContactsContract;
+import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TimePicker;
 
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity {
-    EditText Turl, Ttext, Tnumber, Tcall;
-    String url, InText, Dnumber, Cnumber, am_pm, pesan;
-    int hour, minutes;
-    TimePicker picker;
+    EditText Turl, Ttext, Tnumber, Tcall, Ttime, Tname, Tphone, Temail;
+    String url, InText, Dnumber, Cnumber, pesan, name, phone, email;
+    int hour, minutes, setHour, setMinute;
+    TimePickerDialog picker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("Aplikasi Sender");
+        Ttime = findViewById(R.id.texttime);
+        Ttime.setInputType(InputType.TYPE_NULL);
+        Ttime.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                final Calendar cldr = Calendar.getInstance();
+                hour = cldr.get(Calendar.HOUR_OF_DAY);
+                minutes = cldr.get(Calendar.MINUTE);
+
+                picker = new TimePickerDialog(MainActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker tp, int sHour, int sminute) {
+                        Ttime.setText(sHour+":"+sminute);
+                        setHour= sHour;
+                        setMinute = sminute;
+                    }
+                },hour, minutes, true );
+                picker.show();
+            }
+        });
 
     }
 
@@ -82,31 +108,36 @@ public class MainActivity extends AppCompatActivity {
 
     public void SetAlarm(View view) {
 
-        picker = findViewById(R.id.datePicker1);
-        if (Build.VERSION.SDK_INT >= 23 ){
-            hour = picker.getHour();
-            minutes = picker.getMinute();
-        }
-        else{
-            hour = picker.getCurrentHour();
-            minutes= picker.getCurrentMinute();
-        }
-        if(hour > 12) {
-            am_pm = "PM";
-            hour = hour - 12;
-        }
-        else
-        {
-            am_pm="AM";
-        }
-
         pesan = "test";
+
         Intent setalarm = new Intent(AlarmClock.ACTION_SET_ALARM)
                 .putExtra(AlarmClock.EXTRA_MESSAGE, pesan)
-                .putExtra(AlarmClock.EXTRA_HOUR, hour)
-                .putExtra(AlarmClock.EXTRA_MINUTES, minutes);
+                .putExtra(AlarmClock.EXTRA_HOUR, setHour)
+                .putExtra(AlarmClock.EXTRA_MINUTES, setMinute);
         if (setalarm.resolveActivity(getPackageManager()) != null) {
             startActivity(setalarm);
+        }
+
+
+    }
+
+    public void SaveContact(View view) {
+        Tname = findViewById(R.id.textname);
+        Tphone = findViewById(R.id.textnomer);
+        Temail = findViewById(R.id.textemail);
+
+        name = Tname.getText().toString();
+        phone = Tphone.getText().toString();
+        email = Temail.getText().toString();
+
+        Intent savecontact = new Intent(Intent.ACTION_INSERT);
+        savecontact.setType(ContactsContract.Contacts.CONTENT_TYPE);
+        savecontact.putExtra(ContactsContract.Intents.Insert.NAME, name);
+        savecontact.putExtra(ContactsContract.Intents.Insert.EMAIL, email);
+        savecontact.putExtra(ContactsContract.Intents.Insert.PHONE, phone);
+
+        if (savecontact.resolveActivity(getPackageManager()) != null) {
+            startActivity(savecontact);
         }
     }
 }
