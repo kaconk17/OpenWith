@@ -9,22 +9,27 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+
+
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Open URL" />
+                android:text="Open URL (ACTION_VIEW)" />
 
             <TableRow
                 android:layout_width="match_parent"
@@ -60,13 +65,13 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Text"
+                android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:layout_marginTop="20dp"/>
+                android:hint="Text (ACTION_SEND)" />
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/textView5"
@@ -75,20 +80,127 @@
                     android:text="Text : " />
 
                 <EditText
-                    android:id="@+id/editText2"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/inputext"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint="Text" />
+                    android:hint="Text"
+                    android:textSize="15dp"
+                    android:inputType="textPersonName" />
 
                 <ImageButton
                     android:id="@+id/imageButton2"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:scaleType="fitCenter"
                     android:background="@null"
+                    android:onClick="OpenText"
+                    android:scaleType="fitCenter"
                     app:srcCompat="@drawable/icon_text" />
+            </TableRow>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Dial Number (ACTION_DIAL)" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="Phone Number : " />
+
+                <EditText
+                    android:id="@+id/phonenumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Phone Number"
+                    android:textSize="15dp"
+                    android:inputType="phone" />
+
+                <ImageButton
+                    android:id="@+id/btndial"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:onClick="OpenDial"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/dialicon" />
+            </TableRow>
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Call Phone Number (ACTION_CALL)" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="Phone Number : " />
+
+                <EditText
+                    android:id="@+id/numbercall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Phone Number"
+                    android:textSize="15dp"
+                    android:inputType="phone" />
+
+                <ImageButton
+                    android:id="@+id/btncall"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:scaleType="centerCrop"
+                    android:onClick="OpenCall"
+                    app:srcCompat="@drawable/callicon2" />
+            </TableRow>
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Alarm (ACTION_SET_ALARM)" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TimePicker
+                    android:id="@+id/datePicker1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:timePickerMode="spinner"/>
+
+                <ImageButton
+                    android:id="@+id/imageButton5"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@null"
+                    android:scaleType="centerCrop"
+                    android:onClick="SetAlarm"
+                    app:srcCompat="@drawable/alarmicon" />
             </TableRow>
 
         </LinearLayout>
